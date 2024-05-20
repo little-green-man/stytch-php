@@ -3,7 +3,7 @@
         'name' => 'little-green-man/stytch-php',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd23aab803e541ae74b426710f4efef0651d5ff95',
+        'reference' => 'a49d3c4ed64342e4f21063835e70fef740c61a95',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'little-green-man/stytch-php' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd23aab803e541ae74b426710f4efef0651d5ff95',
+            'reference' => 'a49d3c4ed64342e4f21063835e70fef740c61a95',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

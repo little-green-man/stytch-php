@@ -15,6 +15,7 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 final class ClientBuilder
 {
+    // Inspired by https://madewithlove.com/blog/building-an-sdk-with-php-part-1/
 
     private ClientInterface $httpClient;
     private RequestFactoryInterface $requestFactoryInterface;

@@ -3,7 +3,7 @@
 namespace LittleGreenMan\StytchPHP;
 
 use Http\Client\Common\HttpMethodsClientInterface;
-use LittleGreenMan\StytchPHP\B2B\Organizations;
+use LittleGreenMan\StytchPHP\Endpoints\B2B\Organizations;
 
 class StytchB2B
 {
