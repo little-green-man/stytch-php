@@ -5,6 +5,10 @@ namespace LittleGreenMan\StytchPHP\Resources\Model;
 class Organization
 {
     protected object $original;
+
+    public function __construct(object $original) {
+        $this->original = $original;
+    }
 }
 
 // provide getters for the following properties:
