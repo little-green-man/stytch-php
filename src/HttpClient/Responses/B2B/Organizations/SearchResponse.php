@@ -1,11 +1,11 @@
 <?php
 
-namespace LittleGreenMan\StytchPHP\HttpClient\Responses\B2B;
+namespace LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Organizations;
 
 use LittleGreenMan\StytchPHP\HttpClient\Responses\Concerns\StytchResponse;
 use LittleGreenMan\StytchPHP\Resources\Organization;
 
-class OrganizationSearchResponse
+class SearchResponse
 {
     use StytchResponse;
 

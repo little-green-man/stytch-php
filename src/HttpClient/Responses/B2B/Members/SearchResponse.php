@@ -1,12 +1,12 @@
 <?php
 
-namespace LittleGreenMan\StytchPHP\HttpClient\Responses\B2B;
+namespace LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Members;
 
 use LittleGreenMan\StytchPHP\HttpClient\Responses\Concerns\StytchResponse;
 use LittleGreenMan\StytchPHP\Resources\Member;
 
 class
-MemberSearchResponse
+SearchResponse
 {
     use StytchResponse;
 

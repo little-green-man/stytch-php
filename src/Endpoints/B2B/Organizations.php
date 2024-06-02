@@ -4,11 +4,11 @@ namespace LittleGreenMan\StytchPHP\Endpoints\B2B;
 
 use LittleGreenMan\StytchPHP\Exceptions\InvalidOrganizationSlugException;
 use LittleGreenMan\StytchPHP\HttpClient\Responses;
-use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\OrganizationCreateResponse;
-use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\OrganizationDeleteResponse;
-use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\OrganizationGetResponse;
-use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\OrganizationSearchResponse;
-use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\OrganizationUpdateResponse;
+use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Organizations\CreateResponse;
+use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Organizations\DeleteResponse;
+use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Organizations\GetResponse;
+use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Organizations\SearchResponse;
+use LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Organizations\UpdateResponse;
 use LittleGreenMan\StytchPHP\HttpClient\StytchResponseHandler;
 use LittleGreenMan\StytchPHP\StytchB2B;
 
@@ -30,10 +30,10 @@ class Organizations
         return new Members($this->stytchB2B, $this->organizationId);
     }
 
-    public function create(string $name, string $slug): OrganizationCreateResponse
+    public function create(string $name, string $slug): CreateResponse
     {
         return StytchResponseHandler::hydrateClass(
-            className: OrganizationCreateResponse::class,
+            className: CreateResponse::class,
             from: $this->stytchB2B->getHttpClient()->post("/b2b/organizations", body: json_encode([
                 'organization_name' => $name,
                 'organization_slug' => $slug,
@@ -42,7 +42,7 @@ class Organizations
     }
 
 
-    public function search(?string $cursor = null, ?int $limit = null, ?object $query = null): OrganizationSearchResponse
+    public function search(?string $cursor = null, ?int $limit = null, ?object $query = null): SearchResponse
     {
         $params = [];
 
@@ -59,16 +59,16 @@ class Organizations
         }
 
         return StytchResponseHandler::hydrateClass(
-            className: OrganizationSearchResponse::class,
+            className: SearchResponse::class,
             from: $this->stytchB2B->getHttpClient()->post("/b2b/organizations/search", body: json_encode($params))
         );
     }
 
-    public function get(?string $organizationId = null): OrganizationGetResponse
+    public function get(?string $organizationId = null): GetResponse
     {
         $organizationId = $organizationId ?? $this->organizationId;
         return StytchResponseHandler::hydrateClass(
-            className: OrganizationGetResponse::class,
+            className: GetResponse::class,
             from: $this->stytchB2B->getHttpClient()->get("/b2b/organizations/{$organizationId}")
         );
     }
@@ -83,12 +83,12 @@ class Organizations
      * @throws InvalidOrganizationSlugException
      * Update an organization. See https://stytch.com/docs/b2b/api/update-organization for params.
      */
-    public function update(array $data, ?string $organizationId = null, ?string $memberSession = null, ?string $memberSessionJWT = null): OrganizationUpdateResponse
+    public function update(array $data, ?string $organizationId = null, ?string $memberSession = null, ?string $memberSessionJWT = null): UpdateResponse
     {
         $organizationId = $organizationId ?? $this->organizationId;
 
         return StytchResponseHandler::hydrateClass(
-            className: OrganizationUpdateResponse::class,
+            className: UpdateResponse::class,
             from: $this->stytchB2B->getHttpClient()->put(
                 uri: "/b2b/organizations/{$organizationId}",
                 headers: [
@@ -99,12 +99,12 @@ class Organizations
         );
     }
 
-    public function delete(?string $organizationId = null, ?string $memberSession = null, ?string $memberSessionJWT = null): OrganizationDeleteResponse
+    public function delete(?string $organizationId = null, ?string $memberSession = null, ?string $memberSessionJWT = null): DeleteResponse
     {
         $organizationId = $organizationId ?? $this->organizationId;
 
         return StytchResponseHandler::hydrateClass(
-            className: OrganizationDeleteResponse::class,
+            className: DeleteResponse::class,
             from: $this->stytchB2B->getHttpClient()->delete(
                 uri: "/b2b/organizations/{$organizationId}",
                 headers: [

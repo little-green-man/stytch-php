@@ -37,9 +37,9 @@ This client library supports all of Stytch's live products as follows:
 
 - [x] [Organizations](https://stytch.com/docs/b2b/api/organization-object)
 - [x] [Members](https://stytch.com/docs/b2b/api/member-object)
-- [ ] [RBAC](https://stytch.com/docs/b2b/api/rbac-resource-object)
-- [ ] [Email Magic Links](https://stytch.com/docs/b2b/api/send-login-signup-email)
-- [ ] [OAuth logins](https://stytch.com/docs/b2b/api/oauth-google-start)
+- [x] [RBAC](https://stytch.com/docs/b2b/api/rbac-resource-object)
+- [x] [Email Magic Links](https://stytch.com/docs/b2b/api/send-login-signup-email)
+- [x] [OAuth logins](https://stytch.com/docs/b2b/api/oauth-google-start)
 - [ ] [Session Management](https://stytch.com/docs/b2b/api/session-object)
 - [ ] [Single-Sign On](https://stytch.com/docs/b2b/api/sso-authenticate-start)
 - [ ] [Discovery](https://stytch.com/docs/b2b/api/discovered-organization-object)
@@ -74,26 +74,26 @@ $stytch = new StytchB2B(
 Create an organization
 
 ```php
-$stytch->organizations()->create('Test Organization', 'test-org')
+$response = $stytch->organizations()->create('Test Organization', 'test-org');
+$organization = $response->organization;
 ```
 
-Log the first user into the organization
-
-```javascript
-client.magicLinks
-  .loginOrSignup({
-    organization_id: "organization-id-from-create-response-...",
-    email_address: "admin@acme.co",
-  })
-  .then((res) => console.log(res))
-  .catch((err) => console.error(err));
-```
 
 ## Handling Errors
 
-TBD.
+Each response includes a boolean method `wasSuccessful()`, which can be tested before trying to access response data.
 
-Learn more about errors in the [docs](https://stytch.com/docs/api/errors).
+If the response was not successful, you can access the Stytch error details as follows:
+
+```php
+$response->error_message;
+$response->error_type;
+$response->error_url;
+```
+
+If the mapper is unable to hydrate the response, it will throw an exception. This might be due to mismatches between the SDK and the Stytch API, please raise an issue if you encounter this.
+
+Learn more about Stytch errors in the [docs](https://stytch.com/docs/api/errors).
 
 ## Customizing the HTTPS Client
 

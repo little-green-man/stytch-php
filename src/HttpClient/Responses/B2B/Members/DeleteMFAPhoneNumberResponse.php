@@ -1,13 +1,13 @@
 <?php
 
-namespace LittleGreenMan\StytchPHP\HttpClient\Responses\B2B;
+namespace LittleGreenMan\StytchPHP\HttpClient\Responses\B2B\Members;
 
 use LittleGreenMan\StytchPHP\HttpClient\Responses\Concerns\StytchResponse;
 use LittleGreenMan\StytchPHP\Resources\Member;
 use LittleGreenMan\StytchPHP\Resources\Organization;
 
 class
-MemberReactivateResponse
+DeleteMFAPhoneNumberResponse
 {
     use StytchResponse;
 
