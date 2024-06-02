@@ -16,7 +16,7 @@ You can find your API credentials in the [Stytch Dashboard](https://stytch.com/d
 
 This client library supports all of Stytch's live products as follows:
 
-> Note: This library is in development. The features below are being built out incrementally.
+> Note: This library is in development. The features below are being built out incrementally, and the SDK may have breaking changes until a stable release.
 
 **B2C**
 
@@ -36,7 +36,7 @@ This client library supports all of Stytch's live products as follows:
 **B2B**
 
 - [x] [Organizations](https://stytch.com/docs/b2b/api/organization-object)
-- [ ] [Members](https://stytch.com/docs/b2b/api/member-object)
+- [x] [Members](https://stytch.com/docs/b2b/api/member-object)
 - [ ] [RBAC](https://stytch.com/docs/b2b/api/rbac-resource-object)
 - [ ] [Email Magic Links](https://stytch.com/docs/b2b/api/send-login-signup-email)
 - [ ] [OAuth logins](https://stytch.com/docs/b2b/api/oauth-google-start)

@@ -29,6 +29,9 @@ final class ClientBuilder
     protected string $authUri = "/authentication";
     protected bool $testMode = false;
 
+    protected ?string $memberSession = null;
+    protected ?string $memberSessionJwt = null;
+
 
     public function __construct(
         string                  $secret,
@@ -69,8 +72,12 @@ final class ClientBuilder
         $this->plugins[] = $plugin;
     }
 
-    public function getHttpClient(): HttpMethodsClientInterface
+    public function getHttpClient(?array $additionalDefaultHeaders = null): HttpMethodsClientInterface
     {
+        if($additionalDefaultHeaders != null AND count($additionalDefaultHeaders) > 0){
+            $this->addPlugin(new Plugin\HeaderDefaultsPlugin($additionalDefaultHeaders));
+        }
+
         $pluginClient = (new PluginClientFactory())->createClient($this->httpClient, $this->plugins);
 
         return new HttpMethodsClient(

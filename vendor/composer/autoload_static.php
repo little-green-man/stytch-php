@@ -10,6 +10,7 @@ class ComposerStaticInit2ab6dab632b0216eb78ba620a385d809
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '07d7f1a47144818725fd8d91a907ac57' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/create_uploaded_file.php',
         'da94ac5d3ca7d2dbab84ce561ce72bfd' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_headers_from_sapi.php',
@@ -18,18 +19,23 @@ class ComposerStaticInit2ab6dab632b0216eb78ba620a385d809
         'de95e0ac670b27c84ef8c5ac41fc1b34' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/normalize_server.php',
         'b6c2870932b0250c10334a86dcb33c7f' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/normalize_uploaded_files.php',
         'd02cf21124526632320d6f20b1bbf905' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/parse_cookie_header.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\OptionsResolver\\' => 34,
         ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
+            'Psr\\Cache\\' => 10,
+            'PhpParser\\' => 10,
         ),
         'L' => 
         array (
@@ -45,9 +51,20 @@ class ComposerStaticInit2ab6dab632b0216eb78ba620a385d809
             'Http\\Client\\Common\\' => 19,
             'Http\\Client\\' => 12,
         ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+        ),
         'C' => 
         array (
             'Clue\\StreamFilter\\' => 18,
+        ),
+        'B' => 
+        array (
+            'Brick\\VarExporter\\' => 18,
+            'Brick\\Reflection\\' => 17,
+            'Brick\\JsonMapper\\' => 17,
         ),
     );
 
@@ -55,6 +72,14 @@ class ComposerStaticInit2ab6dab632b0216eb78ba620a385d809
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
         'Symfony\\Component\\OptionsResolver\\' => 
         array (
@@ -68,6 +93,14 @@ class ComposerStaticInit2ab6dab632b0216eb78ba620a385d809
         'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PhpParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
         'LittleGreenMan\\StytchPHP\\' => 
         array (
@@ -101,9 +134,29 @@ class ComposerStaticInit2ab6dab632b0216eb78ba620a385d809
         array (
             0 => __DIR__ . '/..' . '/php-http/httplug/src',
         ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/src',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
         'Clue\\StreamFilter\\' => 
         array (
             0 => __DIR__ . '/..' . '/clue/stream-filter/src',
+        ),
+        'Brick\\VarExporter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/varexporter/src',
+        ),
+        'Brick\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/reflection/src',
+        ),
+        'Brick\\JsonMapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/json-mapper/src',
         ),
     );
 
